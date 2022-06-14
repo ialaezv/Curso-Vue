@@ -21,7 +21,7 @@ const routes = [
   },
   {
     path: '/daybook',
-    beforeEnter: [ isAuthenticatedGuard],
+    beforeEnter: [ isAuthenticatedGuard ],
     ...daybookRouter
   },
   {
