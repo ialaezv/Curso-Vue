@@ -24,13 +24,21 @@ const useAuth = () => {
         return resp
     }
 
+    const logout = () => {
+        store.commit('auth/logout')
+        store.commit('journal/clearEntries')
+    }
+
+
     return {
         createUser,
         loginUser,
         checkAuthStatus,
+        logout,
 
         // Variable computada pasada a la funció del arxiu getters 
-        authStatus: computed(() => store.getters['auth/currentState'])
+        authStatus: computed(() => store.getters['auth/currentState']),
+        userName: computed(() => store.getters['auth/userName'])
     }
 }
 
